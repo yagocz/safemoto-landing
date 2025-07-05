@@ -12,10 +12,11 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #2c3e50;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
 
         .container {
@@ -26,15 +27,14 @@
 
         /* Header */
         header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
             padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
         nav {
@@ -44,24 +44,27 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: #fff;
             text-decoration: none;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
             color: #fff;
             text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
             padding: 0.5rem 1rem;
             border-radius: 25px;
-            transition: all 0.3s ease;
         }
 
         .nav-links a:hover {
@@ -69,133 +72,257 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
-        .hero {
-            height: 100vh;
+        .cart-icon {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            color: white;
-            padding-top: 80px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
         }
 
-        .hero-content h1 {
-            font-size: 3.5rem;
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero-content p {
-            font-size: 1.3rem;
+        .hero .tagline {
+            font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
             color: white;
             padding: 1rem 2rem;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
+            border-radius: 30px;
+            font-weight: 600;
             transition: all 0.3s ease;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
-            animation: fadeInUp 1s ease-out 0.6s both;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
         }
 
-        /* Features Section */
-        .features {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        .btn-secondary {
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
         }
 
-        .features h2 {
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(78, 205, 196, 0.6);
+        }
+
+        .rating {
+            color: #ffd700;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* What is SafeMoto Section */
+        .what-is {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .what-is h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .what-is .description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #34495e;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .feature-card {
-            background: white;
-            padding: 2rem;
+        .features-list {
+            list-style: none;
+            margin-bottom: 2rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-list li {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.7);
             border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: flex-start;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
+        .features-list li:hover {
+            transform: translateY(-5px);
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            margin-right: 1rem;
+            font-size: 2rem;
+            margin-top: 0.2rem;
         }
 
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #333;
+        .feature-content h3 {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
         }
 
-        .feature-card p {
-            color: #666;
-            line-height: 1.8;
+        .feature-content p {
+            color: #34495e;
+            margin: 0;
+        }
+
+        .feature-badge {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-left: 0.5rem;
+        }
+
+        /* Key Features Section */
+        .key-features {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .key-features h2 {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .key-feature {
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .key-feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .key-feature h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .key-feature p {
+            color: #34495e;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .key-feature .highlight {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .more-info {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .more-info:hover {
+            color: #2980b9;
+            text-decoration: underline;
         }
 
         /* Plans Section */
         .plans {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
         }
 
         .plans h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 3rem;
-            color: white;
+            color: #2c3e50;
         }
 
         .plans-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
         .plan-card {
-            background: white;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
             position: relative;
+            border: 2px solid transparent;
         }
 
         .plan-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
         }
 
         .plan-card.popular {
-            border: 3px solid #ff6b6b;
+            border: 2px solid #ff6b6b;
+            background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
         }
 
         .plan-card.popular::before {
@@ -204,82 +331,96 @@
             top: -10px;
             left: 50%;
             transform: translateX(-50%);
-            background: #ff6b6b;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
             color: white;
             padding: 0.5rem 1rem;
-            border-radius: 25px;
-            font-size: 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
         }
 
         .plan-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: #2c3e50;
         }
 
         .plan-price {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: bold;
-            color: #667eea;
-            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
         }
 
         .plan-features {
             list-style: none;
             margin-bottom: 2rem;
+            text-align: left;
         }
 
         .plan-features li {
-            padding: 0.5rem 0;
-            color: #666;
-            border-bottom: 1px solid #eee;
+            padding: 0.8rem 0;
+            color: #34495e;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .plan-features li:last-child {
+            border-bottom: none;
         }
 
         .plan-features li::before {
             content: "✓";
-            color: #4CAF50;
-            margin-right: 0.5rem;
+            color: #27ae60;
+            margin-right: 0.8rem;
+            font-weight: bold;
+            font-size: 1.1rem;
         }
 
         .btn-plan {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
             color: white;
             padding: 1rem 2rem;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
+            border-radius: 30px;
+            font-weight: 600;
             transition: all 0.3s ease;
             display: inline-block;
             width: 100%;
             border: none;
             cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
         }
 
         .btn-plan:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 6px 20px rgba(78, 205, 196, 0.6);
         }
 
         /* Contact Section */
         .contact {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
         }
 
         .contact h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 3rem;
-            color: #333;
+            color: #2c3e50;
         }
 
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .form-group {
@@ -289,24 +430,26 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #333;
+            font-weight: 600;
+            color: #2c3e50;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 1rem;
-            border: 2px solid #eee;
+            border: 2px solid #ecf0f1;
             border-radius: 10px;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
+            background: #fff;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
         }
 
         .form-group textarea {
@@ -316,22 +459,10 @@
 
         /* Footer */
         footer {
-            background: #333;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
             text-align: center;
             padding: 2rem 0;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Responsive */
@@ -340,15 +471,15 @@
                 display: none;
             }
             
-            .hero-content h1 {
-                font-size: 2.5rem;
+            .hero h1 {
+                font-size: 2.2rem;
             }
             
-            .hero-content p {
-                font-size: 1.1rem;
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
             }
             
-            .features-grid,
             .plans-grid {
                 grid-template-columns: 1fr;
             }
@@ -361,58 +492,86 @@
         <nav class="container">
             <a href="#" class="logo">SafeMoto</a>
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#caracteristicas">Características</a></li>
-                <li><a href="#planes">Planes</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#pro">SAFEMOTO PRO</a></li>
+                <li><a href="#city">SAFEMOTO CITY</a></li>
+                <li><a href="#tienda">Tienda</a></li>
+                <li><a href="#funcionalidades">Funcionalidades</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#ayuda">Ayuda</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#idioma">ES/ES</a></li>
+                <li><div class="cart-icon">0</div></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Protege tu motocicleta con tecnología inteligente</h1>
-            <p>Sistema de monitoreo en tiempo real para prevenir robos de motos</p>
-            <a href="#planes" class="btn-primary">Ver planes</a>
+    <section class="hero">
+        <div class="container">
+            <h1>Si vas en moto, SAFEMOTO</h1>
+            <p class="tagline">El único localizador GPS antirrobo con asistencia en accidentes</p>
+            <div class="hero-buttons">
+                <a href="#planes" class="btn-primary">Comprar</a>
+                <a href="#planes" class="btn-secondary">¿Cuál elijo?</a>
+            </div>
+            <div class="rating">★ 4,45</div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="caracteristicas" class="features">
+    <!-- What is SafeMoto Section -->
+    <section class="what-is">
         <div class="container">
-            <h2>Características principales</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>Monitoreo en tiempo real</h3>
-                    <p>Sensores IoT avanzados que detectan movimientos sospechosos y cambios en el estado de tu motocicleta las 24 horas del día</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚨</div>
-                    <h3>Alertas instantáneas</h3>
-                    <p>Recibe notificaciones inmediatas en tu smartphone cuando se detecte cualquier anomalía o intento de robo</p>
-                </div>
-                <div class="feature-card">
+            <h2>¿Qué es SAFEMOTO?</h2>
+            <p class="description">
+                SAFEMOTO es el localizador GPS para motos con sistema de alarma antirrobo, telemetría y servicio eCall (asistencia en caso de accidente). Con SAFEMOTO, tu moto estará segura, y tu vida, protegida.
+            </p>
+            <ul class="features-list">
+                <li>
                     <div class="feature-icon">📍</div>
-                    <h3>Rastreo GPS</h3>
-                    <p>Localiza tu motocicleta en tiempo real desde cualquier lugar y accede al historial de ubicaciones</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔋</div>
-                    <h3>Monitoreo de batería</h3>
-                    <p>Controla el estado de la batería de tu moto y recibe alertas cuando necesite mantenimiento</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>App móvil intuitiva</h3>
-                    <p>Interfaz fácil de usar disponible para iOS y Android con todas las funciones al alcance de tu mano</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3>Instalación sencilla</h3>
-                    <p>Dispositivo plug-and-play de fácil instalación sin necesidad de modificaciones complejas</p>
-                </div>
+                    <div class="feature-content">
+                        <h3>Localización GPS y seguimiento en tiempo real.</h3>
+                        <p>Puedes compartir la localización de tu moto en cualquier momento de forma fácil y rápida.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="feature-icon">🚨</div>
+                    <div class="feature-content">
+                        <h3>SOS eCall, detección y asistencia en accidentes.</h3>
+                        <p>Además, puedes dar de alta contactos de emergencia para mantenerlos informados.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-content">
+                        <h3>Telemetría <span class="feature-badge">¡Sólo en PRO!</span></h3>
+                        <p>Registro de rutas y estadísticas. Mide la aceleración, tiempo de frenada o el grado de inclinación de la moto.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="key-features">
+        <div class="container">
+            <h2>Las claves de SAFEMOTO</h2>
+            
+            <div class="key-feature">
+                <h3>Servicio eCall.</h3>
+                <p>Si sufres un accidente, lo detectaremos en segundos, y avisaremos a los servicios de emergencias. <span class="highlight">No volverás a estar solo en carretera, SAFEMOTO cuidará de ti.</span></p>
+                <a href="#" class="more-info">Más info</a>
+            </div>
+
+            <div class="key-feature">
+                <h3>Sistema de alarma antirrobo con localización en tiempo real.</h3>
+                <p>En caso de intento de robo, tu SAFEMOTO te avisará a través de la aplicación. Si tienes contratado <span class="highlight">SAFEMOTO PHONE</span>, te llamaremos para avisarte.</p>
+                <a href="#" class="more-info">Más info</a>
+            </div>
+
+            <div class="key-feature">
+                <h3>Telemetría profesional y registro de tus rutas.</h3>
+                <p>Solo con <span class="highlight">SAFEMOTO PRO</span> podrás acceder a todas las estadísticas de las rutas realizadas (tiempo de aceleración y frenada, grado de inclinación en cada curva o tiempo en cada parada).</p>
+                <a href="#" class="more-info">Más info</a>
             </div>
         </div>
     </section>
@@ -420,46 +579,42 @@
     <!-- Plans Section -->
     <section id="planes" class="plans">
         <div class="container">
-            <h2>Nuestros planes</h2>
+            <h2>Tenemos el SAFEMOTO perfecto para ti</h2>
             <div class="plans-grid">
                 <div class="plan-card">
-                    <h3>Básico</h3>
-                    <div class="plan-price">S/. 50/mes</div>
-                    <ul class="plan-features">
-                        <li>Monitoreo básico de movimientos</li>
-                        <li>Alertas por SMS</li>
-                        <li>Ubicación GPS básica</li>
-                        <li>Soporte por correo electrónico</li>
-                    </ul>
-                    <button class="btn-plan">Elegir plan</button>
-                </div>
-                <div class="plan-card popular">
-                    <h3>Estándar</h3>
+                    <h3>¡Solo voy por ciudad!</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">Antirrobo, protección y Servicio eCall</p>
+                    <h4 style="color: #333; margin-bottom: 1rem;">SAFEMOTO CITY</h4>
                     <div class="plan-price">S/. 120/mes</div>
                     <ul class="plan-features">
-                        <li>Monitoreo avanzado con sensores IoT</li>
+                        <li>Localización GPS en tiempo real</li>
+                        <li>Sistema de alarma antirrobo</li>
+                        <li>Servicio eCall de emergencia</li>
                         <li>Alertas por SMS y app móvil</li>
-                        <li>Rastreo GPS en tiempo real</li>
-                        <li>Monitoreo de batería</li>
                         <li>Soporte telefónico 24/7</li>
                         <li>Historial de ubicaciones</li>
+                        <li>Geofencing (zonas seguras)</li>
                     </ul>
-                    <button class="btn-plan">Elegir plan</button>
+                    <button class="btn-plan">¡Lo quiero!</button>
                 </div>
-                <div class="plan-card">
-                    <h3>Premium</h3>
+                
+                <div class="plan-card popular">
+                    <h3>¡Suelo salir de ruta!</h3>
+                    <p style="color: #666; margin-bottom: 1rem;">Antirrobo, Servicio eCall y Telemetría</p>
+                    <h4 style="color: #333; margin-bottom: 1rem;">SAFEMOTO PRO</h4>
                     <div class="plan-price">S/. 200/mes</div>
                     <ul class="plan-features">
-                        <li>Monitoreo completo con IA</li>
-                        <li>Alertas personalizadas multicanal</li>
-                        <li>Rastreo GPS premium</li>
-                        <li>Análisis predictivo de seguridad</li>
-                        <li>Soporte prioritario 24/7</li>
-                        <li>Geofencing y zonas seguras</li>
-                        <li>Reportes detallados</li>
+                        <li>Todo lo incluido en CITY</li>
+                        <li>Telemetría profesional completa</li>
+                        <li>Registro detallado de rutas</li>
+                        <li>Análisis de aceleración y frenada</li>
+                        <li>Medición de inclinación en curvas</li>
+                        <li>Estadísticas avanzadas de conducción</li>
+                        <li>Mapas de calor de rutas</li>
+                        <li>Reportes personalizados</li>
                         <li>Instalación gratuita a domicilio</li>
                     </ul>
-                    <button class="btn-plan">Elegir plan</button>
+                    <button class="btn-plan">¡Lo quiero!</button>
                 </div>
             </div>
         </div>
@@ -523,8 +678,8 @@
         // Plan selection
         document.querySelectorAll('.btn-plan').forEach(button => {
             button.addEventListener('click', function() {
-                const planName = this.closest('.plan-card').querySelector('h3').textContent;
-                alert(`Has seleccionado el plan ${planName}. Te redirigiremos al proceso de compra.`);
+                const planName = this.closest('.plan-card').querySelector('h4').textContent;
+                alert(`Has seleccionado ${planName}. Te redirigiremos al proceso de compra.`);
             });
         });
     </script>
